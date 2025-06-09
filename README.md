@@ -51,4 +51,22 @@ Ingested raw CSV files from the ADLS bronze container into Spark DataFrames.Perf
      <td><img src="https://github.com/user-attachments/assets/8263de4d-08aa-4af4-9a08-7af9c0446cc0" width="800"/></td>
     <td><img src="https://github.com/user-attachments/assets/f8e01809-bac4-4ce3-93d5-824dadcb83d2" width="800"/></td>
   </tr>
-</table>  
+</table>  <br>
+
+*3. Data Serving and Reporting with Azure Synapse & Power BI* <br> 
+Once data is transformed and stored in the Silver layer of Azure Data Lake Storage Gen2, the following steps are performed in Azure Synapse for efficient reporting: <br>
+1. Create Views using OPENROWSET as shown below. Use Synapse Serverless SQL pool to create views over Parquet files in the Silver layer. <br>
+
+![image](https://github.com/user-attachments/assets/11b9c348-6d26-4d70-a02c-de14444b971b)
+
+2. Build External Tables on Views as shown below. Define external tables on top of these views to act as the Gold layer. <br>
+![image](https://github.com/user-attachments/assets/7d4f0bc9-0d14-47d9-bfb8-fb66efca5e0f)
+
+3. Model and Join for Reporting. Eg: join  sales and products tables to generate total sales of each product external table. <br>
+![image](https://github.com/user-attachments/assets/e0abadad-617b-4cb1-b317-ccb4bc55dab8)
+
+4. Connect Power BI to  Synapse tables using Serverless SQL endpoint. <br>
+![image](https://github.com/user-attachments/assets/6b799924-f661-4fd1-ae33-2d3650ed2ca2)
+
+
+
